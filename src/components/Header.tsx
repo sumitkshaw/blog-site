@@ -20,57 +20,57 @@ const Header = () => {
   return (
     <header
       className="
-        sticky top-0 z-50
-        bg-background/70 backdrop-blur-md border-b border-border/60
-        shadow-sm
+        sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60
+        shadow-sm transition-all
       "
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between max-w-5xl">
-        {/* Logo / Title */}
-        <Link to="/" className="text-2xl md:text-3xl tracking-tight">
-          <span className="font-['Great_Vibes'] font-bold text-purple-500">
+      <div
+        className="
+          container mx-auto px-5 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between
+          gap-3 sm:gap-0 max-w-5xl
+        "
+      >
+        {/* Logo */}
+        <div className="flex justify-center sm:justify-start">
+          <Link to="/" className="text-3xl tracking-tight font-['Great_Vibes'] font-semibold text-purple-500">
             Bhavyaa
-          </span>
-          <span className="font-playfair font-bold text-foreground">Writes</span>
-        </Link>
+            <span className="font-playfair font-bold text-foreground ml-1">
+            Writes
+            </span>
+          </Link>
+        </div>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-6">
+        {/* Icons */}
+        <div className="flex justify-center sm:justify-end items-center gap-5 text-muted-foreground">
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="text-muted-foreground hover:text-primary transition-colors group"
+            className="p-2 rounded-full hover:bg-muted/30 transition"
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
-              <Moon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              <Moon className="w-5 h-5" />
             ) : (
-              <Sun className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              <Sun className="w-5 h-5" />
             )}
           </button>
 
-          {/* Share Tab */}
+          {/* Share Ideas */}
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScUaUXHJBf5h__MZ7K5l8xNIiLOO8IJxr08RmKkJI2pDRSc7A/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+            className="p-2 rounded-full hover:bg-muted/30 transition flex items-center justify-center"
           >
-            <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline font-montserrat text-sm">
-              Share Ideas
-            </span>
+            <FileText className="w-5 h-5" />
           </a>
 
-          {/* About Tab */}
+          {/* About */}
           <Link
             to="/about"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+            className="p-2 rounded-full hover:bg-muted/30 transition flex items-center justify-center"
           >
-            <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline font-montserrat text-sm">
-              About
-            </span>
+            <User className="w-5 h-5" />
           </Link>
         </div>
       </div>

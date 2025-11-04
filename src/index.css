@@ -93,3 +93,8 @@ All colors MUST be HSL.
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+}
