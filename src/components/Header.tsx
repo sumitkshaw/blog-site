@@ -18,22 +18,23 @@ const Header = () => {
   };
 
   return (
-    <header className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+    <header
+      className="
+        sticky top-0 z-50
+        bg-background/70 backdrop-blur-md border-b border-border/60
+        shadow-sm
+      "
+    >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between max-w-5xl">
-        
         {/* Logo / Title */}
-        <Link to="/" className="flex items-center">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-            <span className="font-['Great_Vibes'] font-bold bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
-              Bhavyaa
-            </span>
-            <span className="font-playfair font-bold text-foreground">
-              Writes
-            </span>
-          </h1>
+        <Link to="/" className="text-2xl md:text-3xl tracking-tight">
+          <span className="font-['Great_Vibes'] font-bold text-purple-500">
+            Bhavyaa
+          </span>
+          <span className="font-playfair font-bold text-foreground">Writes</span>
         </Link>
 
-        {/* Navigation Icons */}
+        {/* Navigation */}
         <div className="flex items-center gap-6">
           {/* Theme Toggle */}
           <button

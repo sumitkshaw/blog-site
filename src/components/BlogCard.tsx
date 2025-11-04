@@ -10,10 +10,12 @@ const BlogCard = ({ post }: BlogCardProps) => {
     <Link to={`/blog/${post.id}`}>
       <article
         className="
-          group bg-card border border-border rounded-xl overflow-hidden 
-          shadow-sm hover:shadow-lg hover:-translate-y-1 
-          transition-all duration-500 flex flex-col 
-          opacity-0 translate-y-4 animate-fade-in-up
+          group rounded-xl border border-border overflow-hidden
+          bg-gradient-to-br from-background to-muted/30
+          hover:from-primary/5 hover:to-accent/10
+          shadow-sm hover:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.15)]
+          hover:-translate-y-1 transition-all duration-500
+          flex flex-col opacity-0 translate-y-4 animate-fade-in-up
         "
       >
         {/* Image Section */}
@@ -49,13 +51,11 @@ const BlogCard = ({ post }: BlogCardProps) => {
                 {post.date}
               </time>
 
-              {/* Tag bubble */}
               <span
                 className="
                   px-3 py-1 rounded-full text-xs font-medium 
-                  bg-muted text-foreground/90
-                  dark:bg-zinc-800 dark:text-zinc-200
-                  border border-border
+                  bg-muted/60 dark:bg-zinc-800/60 border border-border
+                  hover:bg-primary/10 hover:text-primary transition-all
                 "
               >
                 {post.tag}
@@ -66,7 +66,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
             <h2
               className="
                 font-playfair font-semibold text-xl md:text-2xl mb-2 
-                text-foreground group-hover:text-primary transition-colors
+                text-foreground group-hover:text-primary transition-all group-hover:translate-x-1
               "
             >
               {post.title}
