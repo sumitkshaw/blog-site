@@ -18,30 +18,18 @@ const Header = () => {
   };
 
   return (
-    <header
-      className="
-        sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60
-        shadow-sm transition-all
-      "
-    >
-      <div
-        className="
-          container mx-auto px-5 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between
-          gap-3 sm:gap-0 max-w-5xl
-        "
-      >
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60 shadow-sm">
+      <div className="container mx-auto px-5 py-3 flex items-center justify-between max-w-5xl">
         {/* Logo */}
-        <div className="flex justify-center sm:justify-start">
-          <Link to="/" className="text-3xl tracking-tight font-['Great_Vibes'] font-semibold text-purple-500">
-            Bhavyaa
-            <span className="font-playfair font-bold text-foreground ml-1">
+        <Link to="/" className="text-3xl tracking-tight font-['Great_Vibes'] font-semibold text-purple-500">
+          Bhavyaa
+          <span className="font-playfair font-bold text-foreground ml-1">
             Writes
-            </span>
-          </Link>
-        </div>
+          </span>
+        </Link>
 
         {/* Icons */}
-        <div className="flex justify-center sm:justify-end items-center gap-5 text-muted-foreground">
+        <div className="flex items-center gap-5 text-muted-foreground">
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
