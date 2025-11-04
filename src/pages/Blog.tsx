@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +9,11 @@ const Blog = () => {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts.find((p) => p.id === id);
   const navigate = useNavigate();
+
+  // ✅ Always start reading from top
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!post) return <Navigate to="/" replace />;
 
@@ -35,11 +41,22 @@ const Blog = () => {
             />
           )}
 
-          <time className="text-sm text-muted-foreground">{post.date}</time>
+          {/* Date and Tag */}
+          <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
+            <time>{post.date}</time>
+            {post.tag && (
+              <span className="px-3 py-1 rounded-full border border-border bg-muted/40 text-foreground text-xs font-medium">
+                {post.tag}
+              </span>
+            )}
+          </div>
+
+          {/* Title */}
           <h1 className="font-playfair font-bold text-4xl md:text-5xl mt-3 mb-8 text-foreground">
             {post.title}
           </h1>
 
+          {/* Content */}
           <div className="prose prose-lg max-w-none">
             {post.content.split("\n").map((line, index) => {
               if (line.startsWith("# ")) {
